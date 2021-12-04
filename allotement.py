@@ -1,204 +1,348 @@
 r1, r2, r3, r4, r5, r6 = [], [], [], [], [], []
 ind1, ind2, ind3, ind4, ind5, ind6 = 0, 0, 0, 0, 0, 0
-global outfile, stu_count
+global outfile, stu_count, even_addup, odd_addup
+global one, two, three, four, five, six
 
 
-def odd_write(hall):
+def odd_write(hall, loop, addups):
+    global one, two, three, four, five, six
     global ind1, ind2, ind3
+
+    # no : 1
     if int(hall[2]) >= 1:
-        if len(r1) > ind1:
+        addup = loop
+        if len(r1) > ind1 + addup:
 
-            write = ',' + str(r1[ind1][0])
-            stu_count.append(r1[ind1])
+            try:
+                write = ',' + str(r1[ind1 + addup][0])
+                stu_count.append(r1[ind1 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind1 += 1
+            one += 1
         else:
             outfile.write(',')
 
+# no : 4
     if int(hall[2]) >= 2:
-        if len(r2) > ind2:
-            write = ',' + str(r2[ind2][0])
-            stu_count.append(r2[ind2])
+        if len(r2) > ind2 + addup:
+
+            try:
+                write = ',' + str(r2[ind2 + addup][0])
+                stu_count.append(r2[ind2 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind2 += 1
+            two += 1
         else:
             outfile.write(',')
 
+# no : 2
     if int(hall[2]) >= 3:
-        if len(r3) > ind3:
-            write = ',' + str(r3[ind3][0])
-            stu_count.append(r3[ind3])
+        if len(r3) > ind3 + addup:
+
+            try:
+                write = ',' + str(r3[ind3 + addup][0])
+                stu_count.append(r3[ind3 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind3 += 1
+            three += 1
         else:
             outfile.write(',')
 
+# no : 1
     if int(hall[2]) >= 4:
-        if len(r1) > ind1:
-            write = ',,' + str(r1[ind1][0])
-            stu_count.append(r1[ind1])
+        addup = loop + addups
+        if len(r1) > ind1 + addup:
+
+            try:
+                write = ',,' + str(r1[ind1 + addup][0])
+                stu_count.append(r1[ind1 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind1 += 1
+            one += 1
         else:
             outfile.write(',')
 
+# no : 4
     if int(hall[2]) >= 5:
-        if len(r2) > ind2:
-            write = ',' + str(r2[ind2][0])
-            stu_count.append(r2[ind2])
+        if len(r2) > ind2 + addup:
+
+            try:
+                write = ',' + str(r2[ind2 + addup][0])
+                stu_count.append(r2[ind2 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind2 += 1
+            two += 1
         else:
             outfile.write(',')
 
+# no : 2
     if int(hall[2]) >= 6:
-        if len(r3) > ind3:
-            write = ',' + str(r3[ind3][0])
-            stu_count.append(r3[ind3])
+        if len(r3) > ind3 + addup:
+
+            try:
+                write = ',' + str(r3[ind3 + addup][0])
+                stu_count.append(r3[ind3 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind3 += 1
+            three += 1
         else:
             outfile.write(',')
 
+# no : 1
     if int(hall[2]) >= 7:
-        if len(r1) > ind1:
-            write = ',,' + str(r1[ind1][0])
-            stu_count.append(r1[ind1])
+        addup = loop + addups + addups
+        if len(r1) > ind1 + addup:
+
+            try:
+                write = ',,' + str(r1[ind1 + addup][0])
+                stu_count.append(r1[ind1 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind1 += 1
+            one += 1
         else:
             outfile.write(',')
 
+# no : 4
     if int(hall[2]) >= 8:
-        if len(r2) > ind2:
-            write = ',' + str(r2[ind2][0])
-            stu_count.append(r2[ind2])
+        if len(r2) > ind2 + addup:
+
+            try:
+                write = ',' + str(r2[ind2 + addup][0])
+                stu_count.append(r2[ind2 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind2 += 1
+            two += 1
         else:
             outfile.write(',')
 
+# no : 2
     if int(hall[2]) >= 9:
-        if len(r3) > ind3:
-            write = ',' + str(r3[ind3][0])
-            stu_count.append(r3[ind3])
+        if len(r3) > ind3 + addup:
+
+            try:
+                write = ',' + str(r3[ind3 + addup][0])
+                stu_count.append(r3[ind3 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind3 += 1
+            three += 1
         else:
             outfile.write(',')
     outfile.write('\n')
 
 
-def even_write(hall):
+def even_write(hall, loop, addups):
+    global one, two, three, four, five, six
     global ind4, ind5, ind6
+    print(loop, addups)
+    
+# no :3
+    # c = input()
     if int(hall[2]) >= 1:
-        if len(r4) > ind4:
+        addup = loop
+        if len(r4) > ind4 + addup:
 
-            write = ',' + str(r4[ind4][0])
-            stu_count.append(r4[ind4])
+            try:
+                write = ',' + str(r4[ind4 + addup][0])
+                stu_count.append(r4[ind4 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind4 += 1
+            four += 1
         else:
             outfile.write(',')
 
+# no : 6
     if int(hall[2]) >= 2:
-        if len(r5) > ind5:
-            write = ',' + str(r5[ind5][0])
-            stu_count.append(r5[ind5])
+        if len(r5) > ind5 + addup:
+
+            try:
+                write = ',' + str(r5[ind5 + addup][0])
+                stu_count.append(r5[ind5 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind5 += 1
+            five += 1
         else:
             outfile.write(',')
 
+# no : 5
     if int(hall[2]) >= 3:
-        if len(r6) > ind6:
-            write = ',' + str(r6[ind6][0])
-            stu_count.append(r6[ind6])
+        if len(r6) > ind6 + addup:
+
+            try:
+                write = ',' + str(r6[ind6 + addup][0])
+                stu_count.append(r6[ind6 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind6 += 1
+            six += 1
         else:
             outfile.write(',')
 
+# no : 
     if int(hall[2]) >= 4:
-        if len(r4) > ind4:
-            write = ',,' + str(r4[ind4][0])
-            stu_count.append(r4[ind4])
+        addup = loop + addups
+        if len(r4) > ind4 + addup:
+
+            try:
+                write = ',,' + str(r4[ind4 + addup][0])
+                stu_count.append(r4[ind4 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind4 += 1
+            four += 1
         else:
             outfile.write(',')
 
+# no : 
     if int(hall[2]) >= 5:
         global ind2
-        if len(r5) > ind5:
-            write = ',' + str(r5[ind5][0])
-            stu_count.append(r5[ind5])
+        if len(r5) > ind5 + addup:
+
+            try:
+                write = ',' + str(r5[ind5 + addup][0])
+                stu_count.append(r5[ind5 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind5 += 1
+            five += 1
         else:
             outfile.write(',')
 
+# no : 
     if int(hall[2]) >= 6:
-        if len(r6) > ind6:
-            write = ',' + str(r6[ind6][0])
-            stu_count.append(r6[ind6])
+        if len(r6) > ind6 + addup:
+
+            try:
+                write = ',' + str(r6[ind6 + addup][0])
+                stu_count.append(r6[ind6 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind6 += 1
+            six += 1
         else:
             outfile.write(',')
 
+# no : 
     if int(hall[2]) >= 7:
-        if len(r4) > ind4:
-            write = ',,' + str(r4[ind4][0])
-            stu_count.append(r4[ind4])
+        addup = loop + addups + addups
+        if len(r4) > ind4 + addup:
+
+            try:
+                write = ',,' + str(r4[ind4 + addup][0])
+                stu_count.append(r4[ind4 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind4 += 1
+            four += 1
         else:
             outfile.write(',')
 
+# no : 
     if int(hall[2]) >= 8:
-        if len(r5) > ind5:
-            write = ',' + str(r5[ind5][0])
-            stu_count.append(r5[ind5])
+        if len(r5) > ind5 + addup:
+
+            try:
+                write = ',' + str(r5[ind5 + addup][0])
+                stu_count.append(r5[ind5 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind5 += 1
+            five += 1
         else:
             outfile.write(',')
 
+# no : 
     if int(hall[2]) >= 9:
-        if len(r6) > ind6:
-            write = ',' + str(r6[ind6][0])
-            stu_count.append(r6[ind6])
+        if len(r6) > ind6 + addup:
+
+            try:
+                write = ',' + str(r6[ind6 + addup][0])
+                stu_count.append(r6[ind6 + addup])
+            except IndexError:
+                write = ',,' + ','
+
             outfile.write(write)
-            ind6 += 1
+            six += 1
         else:
             outfile.write(',')
     outfile.write('\n')
+
+
+def arrange_column(row_count, col_count):
+    global odd_addup, even_addup
+    col_count = int(col_count)
+    row_count = int(row_count)
+    print(row_count, "R \nC", col_count)
+    # c = input()
+    even_addup = int(col_count * 0.5)
+    if col_count % 2 == 1:
+        odd_addup = even_addup + 1
+    else:
+        odd_addup = even_addup
+    print(even_addup, odd_addup)
 
 
 def colls_3(hall):
-    write = ',' * int(float(hall[2]) * 0.5), hall[0], '\n'
+    try:
+        write = ',,,,', hall[0], '\n'
+    except IndexError:
+        write = ',,' + ','
     outfile.writelines(write)
     i = 0
+    j = 0
+    arrange_column(hall[2], hall[1])
     # for i in range(0, int(hall[1])):
     while True:
+
         if i == int(hall[1]):
             return
         else:
-            odd_write(hall)
+
+            print("j ", j, "i", i)
+            odd_write(hall, j, odd_addup)
             i += 1
+        #     cover here
         if i == int(hall[1]):
             return
         else:
-            even_write(hall)
+
+            even_write(hall, j, even_addup)
             i += 1
+        j = j + 1
 
 
 def stud_count(stu_count, coll):
     # print(stu_count)
     classes = []
     unique = {}
-    write = str(',' * (int(coll)-1)), "Students Count : \n"
+    write = ",,,,Students Count : \n"
     outfile.writelines(write)
     for stu in stu_count:
         classes.append(stu[1])
@@ -222,6 +366,7 @@ def stud_count(stu_count, coll):
 
 def main_call(halls, rollnos, outFileLoc):
     global outfile, stu_count
+    global ind1, ind2, ind3, ind4, ind5, ind6
     loc = str(outFileLoc) + '/outfile.csv'
     outfile = open(loc, 'w')
 
@@ -239,6 +384,11 @@ def main_call(halls, rollnos, outFileLoc):
     r6 = rollnos[5]
 
     for hall in halls:
+        global one, two, three, four, five, six
+        one, two, three, four, five, six = 0, 0, 0, 0, 0, 0
         stu_count = []
         colls_3(hall)
         stud_count(stu_count, hall[2])
+        ind1, ind2, ind3, ind4, ind5, ind6 = ind1+one, ind2+two, ind3+three, ind4+four, ind5+five, ind6+six
+
+    outfile.close()

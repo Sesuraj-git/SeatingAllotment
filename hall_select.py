@@ -14,7 +14,6 @@ class HallSelect:
         self.centralwidget = centralwidget
         self.totalStudents = totalStudents
         self.select_frame = QtWidgets.QFrame(centralwidget)
-        self.upload_button = QtWidgets.QPushButton(self.select_frame)
         self.done_button = QtWidgets.QPushButton(self.select_frame)
         self.listButton = []
         self.halls = []
@@ -45,14 +44,18 @@ class HallSelect:
         self.reset_button.show()
         self.reset_button.clicked.connect(self.resetButtonClicked)
 
-        self.head_label1.setGeometry(QtCore.QRect(25, 50, 301, 31))
+        self.head_label1.setGeometry(QtCore.QRect(25, 50, 501, 31))
         font = QtGui.QFont()
         font.setFamily("Tibetan Machine Uni")
         font.setBold(True)
         font.setWeight(75)
         self.head_label1.setFont(font)
         self.head_label1.setObjectName("head_label1")
-        self.head_label1.setText("Select Exam halls from CheckBoxes Or ")
+        self.head_label1.setText("Select Exam halls from CheckBoxes")
+        self.head_label1.setStyleSheet("font: 75 20pt \"URW Bookman\";\n"
+                                       "color: rgb(239, 41, 41);")
+        font.setBold(True)
+        self.head_label1.setFont(font)
         self.head_label1.show()
 
         self.gridLayoutWidget.setGeometry(QtCore.QRect(15, 84, 941, 391))
@@ -93,28 +96,15 @@ class HallSelect:
         self.done_button.setFont(font)
         self.done_button.setObjectName("done_button")
         self.done_button.setText("Done")
+        self.done_button.setStyleSheet("font: 60 20pt \"URW Bookman\";\n"
+                                       "color: rgb(243, 243, 243);\n"
+                                       "background-color: rgb(115, 210, 22);")
         self.done_button.hide()
 
-        if self.status ==1:
+        if self.status == 1:
             self.calculate(1)
         self.done_button.clicked.connect(self.doneButtonClicked)
 
-        self.head_label2.setGeometry(QtCore.QRect(408, 50, 191, 31))
-        font = QtGui.QFont()
-        font.setFamily("Tibetan Machine Uni")
-        font.setBold(True)
-        font.setWeight(75)
-        self.head_label2.setFont(font)
-        self.head_label2.setObjectName("head_label2")
-        self.head_label2.setText(" to Upload a .xlsx file")
-        self.head_label2.show()
-
-        self.upload_button.setGeometry(QtCore.QRect(322, 51, 91, 25))
-        self.upload_button.setObjectName("upload_button")
-        self.upload_button.setText("Click here")
-        self.upload_button.show()
-        self.upload_button.setStyleSheet("color : blue")
-        self.upload_button.clicked.connect(self.uploadButtonClicked)
 
     def calculate(self, b):
         halls_selected = []
