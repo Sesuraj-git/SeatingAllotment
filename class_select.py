@@ -45,7 +45,7 @@ class ClassSelect:
         self.reset_button.show()
         self.reset_button.clicked.connect(self.resetButtonClicked)
 
-        self.head_label1.setGeometry(QtCore.QRect(25, 50, 301, 31))
+        self.head_label1.setGeometry(QtCore.QRect(25, 50, 501, 31))
         font = QtGui.QFont()
         font.setFamily("Tibetan Machine Uni")
         font.setBold(True)
@@ -53,6 +53,10 @@ class ClassSelect:
         self.head_label1.setFont(font)
         self.head_label1.setObjectName("head_label1")
         self.head_label1.setText("Select classes from CheckBoxes ")
+        self.head_label1.setStyleSheet("font: 75 20pt \"URW Bookman\";\n"
+                                       "color: rgb(239, 41, 41);")
+        font.setBold(True)
+        self.head_label1.setFont(font)
         self.head_label1.show()
 
         self.gridLayoutWidget.setGeometry(QtCore.QRect(15, 84, 941, 391))
@@ -65,7 +69,7 @@ class ClassSelect:
         self.checkBox()
         self.status = 1
 
-        self.done_button.setGeometry(QtCore.QRect(868, 494, 89, 25))
+        self.done_button.setGeometry(QtCore.QRect(838, 494, 89, 25))
         font = QtGui.QFont()
         font.setFamily("Tibetan Machine Uni")
         font.setBold(True)
@@ -73,6 +77,9 @@ class ClassSelect:
         self.done_button.setFont(font)
         self.done_button.setObjectName("done_button")
         self.done_button.setText("Done")
+        self.done_button.setStyleSheet("font: 60 20pt \"URW Bookman\";\n"
+                                       "color: rgb(243, 243, 243);\n"
+                                       "background-color: rgb(115, 210, 22);")
         self.done_button.show()
 
         font = QtGui.QFont()

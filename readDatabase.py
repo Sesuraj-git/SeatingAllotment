@@ -113,6 +113,7 @@ def fetch_rollnos(classes):
 
 def devide_rollnos(rollnos, sizes):
     class_limit = 172
+    # sizes = [sizes[0],sizes[1],sizes[2],sizes[3],]
     class_limit = sizes[0]
     r1, r2, r3, r4, r5, r6 = [], [], [], [], [], []
 
@@ -123,13 +124,7 @@ def devide_rollnos(rollnos, sizes):
         r1.append(rollnos[i])
         start += 1
 
-    class_limit = sizes[1]
-    end = start + class_limit
 
-    # for2
-    for i in range(start, end):
-        r2.append(rollnos[i])
-        start += 1
 
     class_limit = sizes[2]
     end = start + class_limit
@@ -139,6 +134,13 @@ def devide_rollnos(rollnos, sizes):
         r3.append(rollnos[i])
         start += 1
 
+    class_limit = sizes[1]
+    end = start + class_limit
+
+    # for2
+    for i in range(start, end):
+        r2.append(rollnos[i])
+        start += 1
     class_limit = sizes[3]
     end = start + class_limit
 
